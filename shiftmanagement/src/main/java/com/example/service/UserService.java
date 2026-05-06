@@ -23,8 +23,6 @@ public class UserService {
                 user.isActive()
         );
     }
-
-    // Convert DTO → Entity
     private User convertToEntity(UserDTO dto) {
         return new User(
                 dto.getId(),

@@ -3,6 +3,8 @@ package com.example.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import com.example.entity.Task;
+import java.util.List;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -16,6 +18,8 @@ public class ShiftDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @OneToMany(mappedBy = "shiftDetails")
+    private List<Task> tasks;
 
     private LocalDate workDate;
 
