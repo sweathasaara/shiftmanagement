@@ -8,6 +8,8 @@ import com.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ShiftService {
 
@@ -36,5 +38,10 @@ public class ShiftService {
         shift.setStatus(dto.getStatus());
 
         return shiftRepository.save(shift);
+    }
+
+    public List<ShiftDetails> getAllShifts() {
+
+        return shiftRepository.findAll();
     }
 }

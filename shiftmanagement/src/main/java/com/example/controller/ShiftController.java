@@ -6,6 +6,8 @@ import com.example.service.ShiftService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/shifts")
 public class ShiftController {
@@ -15,6 +17,13 @@ public class ShiftController {
 
     @PostMapping
     public ShiftDetails createShift(@RequestBody ShiftDTO dto) {
+
         return shiftService.createShift(dto);
+    }
+
+    @GetMapping
+    public List<ShiftDetails> getAllShifts() {
+
+        return shiftService.getAllShifts();
     }
 }
